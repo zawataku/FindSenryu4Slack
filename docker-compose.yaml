@@ -1,0 +1,11 @@
+services:
+  bot:
+    image: golang:latest
+    container_name: slack-senryu-bot
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    command: go run main.go
